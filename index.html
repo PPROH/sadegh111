@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>صفحه‌ی من 😍</title>
+    <style>
+        body {
+            background-color: #DBD0C6;
+            background-image: linear-gradient(to bottom, #DBD0C6, #DBD0C6);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+
+
+        #hidden-text {
+            position: fixed;
+            top: 0;
+            right: 0;
+            font-size: 200px;
+            color: #ff3366;
+            letter-spacing: 20px;
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        .container {
+            width: 400px;
+            margin: 100px auto;
+            background-color: #ffffff;
+            border: 1px solid #dddddd;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        }
+
+        h1 {
+            color: #ff3366;
+            font-size: 48px;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        p {
+            color: #333333;
+            font-size: 24px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #ff3366;
+            color: #ffffff;
+            padding: 10px 20px;
+            font-size: 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        }
+
+        .button:hover {
+            background-color: #ff6699;
+        }
+
+        .menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: #ffffff;
+            padding: 20px;
+            display: none;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+            z-index: 1;
+        }
+
+        .button:hover+.menu {
+            display: block;
+            animation: slideDown 0.3s;
+            transform-origin: top;
+        }
+
+        @keyframes slideDown {
+            0% {
+                transform: scaleY(0);
+            }
+
+            100% {
+                transform: scaleY(1);
+
+            }
+        }
+
+        .menu-item {
+            list-style: none;
+            font-size: 18px;
+            padding: 8px 0;
+            color: #333333;
+            cursor: pointer;
+        }
+
+        .menu-item:hover {
+            color: #ff3366;
+            font-weight: bold;
+        }
+
+        #added-text {
+            color: #ff3366;
+            font-size: 20px;
+        }
+    </style>
+    <script>
+        function showText() {
+            var message = "حسین سالمی بیا بخون";
+            alert(message);
+        }
+
+        function addText() {
+            var text = prompt("متن جدید را وارد کنید:");
+            var addedText = document.createElement("p");
+            addedText.textContent = text;
+            addedText.className = "menu-item";
+            addedText.addEventListener("click", function () {
+                alert("شما گزینه " + text + " را انتخاب کردید!");
+            });
+            var menu = document.getElementById("menu-items");
+            menu.appendChild(addedText);
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        
+        <h1>به نام خدا</h1>
+        <p>درس اول</p>
+        <a href="#" class="button" onclick="showText()">بیا بخون 😄📚</a>
+        <a href="#" class="button" onclick="addText()">اضافه کن متن جدید! 🖋️</a>
+        <div class="menu">
+            <p>منوی کشویی</p>
+            <ul id="menu-items">
+                <li class="menu-item">گزینه 1</li>
+                <li class="menu-item">گزینه 2</li>
+                <li class="menu-item">گزینه 3</li>
+            </ul>
+        </div>
+    </div>
+    <div id="hidden-text">SADEGH</div>
+    <h1>خوش آمدید به سایت من!</h1>
+    <p>اینجا متن سایت قرار می‌گیرد.</p>
+    <img src="bg.png.jpg" alt="شناور! ادامه کن که بیشتر از نیمی متر ما هستیم، ما داریم روی دریا می‌شناوریم.">
+    <img src="404.jpg" width="400px">
+</body>
+
+</html>
